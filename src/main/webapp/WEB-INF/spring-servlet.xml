@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"  xmlns:p="http://www.springframework.org/schema/p"  xsi:schemaLocation="http://www.springframework.org/schema/beans
+
+ http://www.springframework.org/schema/beans/spring-beans.xsd  http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+ <context:component-scan base-package="controller"/>
+<!--  Step 2: create a spring configuration file-->
+
+<!--  Very Important Note: While creating a spring configuration file you must follow a naming conventention and that is, 
+ 1. create the file inside the folder 'WEB-INF' beside web.xml file.
+ 2. the name of the file have two parts i.e servelt name and -servlet. name the spring configuration file using the servlet name that you set while making a servlet in web.xml file 
+ in this case the file name should be 'spring-servlet.xml', this is because, by giving the file name like this will help the spring container to identify the spring configuration file , and we need not to provide the path of this file to anywhere.
+  -->
+  
+ <!--  Step 3: 
+  Configure View Resolver. -->
+  
+  <bean class = "org.springframework.web.servlet.view.InternalResourceViewResolver" name = "viewResolver" p:prefix = "/WEB-INF/views/" p:suffix = ".jsp"/>
+  
+ </beans>
+ 
